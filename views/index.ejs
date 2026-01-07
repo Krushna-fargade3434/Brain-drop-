@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL POSTS</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <H1>Brain Drop</H1>
+
+    <div class="posts-grid">
+    <%for(post of posts){ %>
+        <div class="post">
+            <h3 class="username"><%= post.username %> </h3>
+            <h4 class="content"><%= post.content %> </h4>
+            <a href="http://localhost:8080/posts/<%= post.id %>">View Post</a>
+            <a href="http://localhost:8080/posts/<%= post.id %>/edit">Edit Post</a>
+            <form action="/posts/<%= post.id %>?_method=DELETE" method="POST" style="display:inline;">
+                <button>Delete Post</button>
+            </form>
+        </div>
+   <% } %>
+    </div>
+
+    <div class="create-new-btn">
+        <a href="http://localhost:8080/posts/new">Create a New Post</a>
+    </div>
+</body>
+</html>
+

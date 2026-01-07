@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: white;
+    margin: 30px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeInDown 0.6s ease;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+@media (max-width: 992px) {
+    .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.post {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideIn 0.5s ease;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.username, .user {
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.content {
+    color: #333;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin: 10px auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+button {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin: 5px;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: slideIn 0.5s ease;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.container {
+    text-align: center;
+}
+
+p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.post-id {
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    font-family: monospace;
+    border: 1px solid #ddd;
+    margin: 5px 0;
+    font-size: 12px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.username-box {
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    margin: 5px 0;
+    font-size: 14px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.create-new-btn {
+    text-align: center;
+    margin: 30px auto;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+form[style*="display:inline"] {
+    display: inline !important;
+    background: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
